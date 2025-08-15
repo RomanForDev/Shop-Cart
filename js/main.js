@@ -5,8 +5,9 @@ function setCards(productos) {
         let card = document.createElement("div");
         card.classList = "shoe-card";
         card.innerHTML = `<img class= "shoe-img" src="${shoe.img}">
-        <p>${shoe.name}</p>
-        <p>${shoe.price}</p>`
+        <h3 id="shoe-name" class="shoe-name" >${shoe.name}</h3>
+        <p id="shoe-price" class= "shoe-price">${shoe.price}</p>
+        <button id="add-button" class="cart-button">Agregar</button>`
         nuevaCard.appendChild(card);
     });
 }
