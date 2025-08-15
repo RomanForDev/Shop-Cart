@@ -56,9 +56,9 @@ main .cards {
   border: 2px solid gray;
   border-radius: 10px;
 }
-main .cards .card-item {
-  display: grid;
-  border: 1px solid black;
+main .shoe-card .shoe-img {
+  height: 30rem;
+  width: 30rem;
 }
 
 footer {
