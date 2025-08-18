@@ -3,6 +3,7 @@ function addToCart(producto) {
     if(!memory) {
         const nuevoProducto = addToMemory(producto);
         localStorage.setItem("products", JSON.stringify([nuevoProducto]));
+        sumNumber();
     } else {
         const indiceProducto = memory.findIndex(shoe => shoe.id === producto.id);
         const newMemory = memory;
@@ -12,7 +13,7 @@ function addToCart(producto) {
             newMemory[indiceProducto].cantidad ++;
         }
         localStorage.setItem("products", JSON.stringify(newMemory));
-        sumNumber(newMemory);
+        sumNumber();
         // console.log(newMemory);
         
     }
@@ -27,10 +28,25 @@ function addToMemory(producto) {
 let numberCart = document.getElementById("items-cart");
 
 function sumNumber(array){
-    let cantidades = array.map(objeto => objeto.cantidad);
-    let sum = cantidades.reduce((a, b) => a + b, 0);
-        console.log(sum);
+    if(!array){
+        showNumber();
+    }else{
+        let cantidades = array.map(objeto => objeto.cantidad);
+        let sum = cantidades.reduce((a, b) => a + b, 0);
+        return sum;
     }
+}
+
+function showNumber() {
+    let number = document.getElementById('items-cart');
+    let memoryCheck = JSON.parse(localStorage.getItem("products"));
+    if(!memoryCheck) {
+        number.innerHTML = '0';
+    }else {
+        number.innerHTML = sumNumber(memoryCheck);
+        console.log(memoryCheck);
+    }
+}
 
 
-//Suma las cantidades sólo si son items distintos. Cuando se suma un item igual no suma ya que no es un nuevo elemento dentro del array sino que cambia el valor de una de sus claves. Yo tendría que acceder al valor de la clave cantidad en cada objeto para asignarlo al length.
+//Show number no puede ejecutarse en ningún lado porque el .map rompe al recibir un elemento que no es array o no es válido para su funcion hecha como el orto por los divinos que se juntan en los ES son unos autenticos genios chicos de verdad la rompen gracias por no dedicarse a otra cosa.
