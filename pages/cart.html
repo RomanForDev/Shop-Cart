@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Document</title>
-    <script src="../js/shoes.js"></script>
+    <!-- <script src="../js/shoes.js"></script> -->
+    <!-- <script src="../js/main.js" defer></script> -->
     <script src="../js/cart.js" defer></script>
-    <script src="../js/main.js" defer></script>
-    <script src="../js/showCart.js"></script>
+    <script src="../js/showCart.js" defer></script>
+    <title>Document</title>
 </head>
 <body>
 
@@ -18,15 +18,12 @@
             <p id="name">Nombre del negocio</p>
             <div class="navbar">
                 <a href="../index.html"><img src="../img/home.png" id="home-img" alt=""></a>
-                <a href=""><img src="../img/cart.png" id="img-cart" alt=""><span id="items-cart">0</span></a>
+                <a href=""><img src="../img/cart.png" id="img-cart" alt=""><span id="items-cart" class="items-cart">0</span></a>
             </div class="navbar">
         </nav>
     </header>
     <main>
-        <section id="cart-view" class="cart-view">
-            <!-- seccion para mostrar display del carrito -->
-            <!-- <p>${}</p> este es el modelo de HTML, borrar despues -->
-        </section>
+        <section id="cards-cart" class="cards-cart"></section>
     </main>
     <footer>
         <p>RomanForDev/Shop Cart</p>
