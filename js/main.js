@@ -1,6 +1,9 @@
+//Constante que maneja el carro de seleccion del usuario;
+// const cart = [];
+
 //Funcion para crear las cards en la interfaz de usuario tomando los elementos de cada objeto en "shoes".
 
-let nuevaCard = document.getElementById('cards');
+const nuevaCard = document.getElementById('cards');
 
 function setCards(productos) {
     productos.forEach(shoe => {
@@ -18,4 +21,25 @@ function setCards(productos) {
 
 setCards(shoes);
 
-//Funcion para escribir el HTML con la información del carrito.
+// //Funcion para escribir el HTML con la información del carrito.
+
+// const cartView = document.getElementById('cart-view');
+
+// function writeCart() {
+//     const memory = JSON.parse(localStorage.getItem("products"));
+//     if(!memory) {
+//         console.log("No hay productos en el carrito");
+//     }else {
+//         memory.forEach(item => {
+//         const itemView = document.createElement("div");
+//         itemView.classList = "item";
+//         itemView.innerHTML = `${item}`;
+//         // cartView.appendChild(itemView);
+//         // console.log(memory)
+//     })
+//     }
+    
+    
+//     }
+
+// writeCart(cartView);

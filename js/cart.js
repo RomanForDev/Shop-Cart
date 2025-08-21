@@ -17,6 +17,7 @@ function addToCart(producto) {
         }
         localStorage.setItem("products", JSON.stringify(newMemory));
         sumNumber();
+        // cart.push(newMemory);
         // console.log(newMemory); //Para control de la funcion.
         
     }
@@ -53,8 +54,8 @@ function showNumber() {
         number.innerHTML = '0';
     }else {
         number.innerHTML = sumNumber(memoryCheck);
-        console.log(memoryCheck);
+        // console.log(memoryCheck);
     }
 }
 
-//Funcion para realizar el cálculo de la compra con la información del carrito y luego mostrarla en el HTML (conjunta con funcion "" en main.js);
+//Funcion para realizar el cálculo de la compra con la información del carrito y luego mostrarla en el HTML (conjunta con funcion "writeCart" en main.js);
