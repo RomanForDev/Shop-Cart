@@ -1,3 +1,6 @@
+
+//Agregar al carrito (array de objetos):
+
 function addToCart(producto) {
     const memory = JSON.parse(localStorage.getItem("products"));
     if(!memory) {
@@ -14,10 +17,12 @@ function addToCart(producto) {
         }
         localStorage.setItem("products", JSON.stringify(newMemory));
         sumNumber();
-        // console.log(newMemory);
+        // console.log(newMemory); //Para control de la funcion.
         
     }
 }
+
+//LocalStorage para emular base de datos (otra parte debería ir a session)
 
 function addToMemory(producto) {
     const newProduct = producto;
@@ -25,7 +30,11 @@ function addToMemory(producto) {
     return newProduct;
 }
 
+//Modificar el número en el display del carrito en la página con lo que se suma al array de objetos del carrito. Funcion showNumber();
+
 let numberCart = document.getElementById("items-cart");
+
+//Funcion para hacer correctamente la suma de cada OBJETO dentro del array, separado de las cantidades de cada producto que se agrege en la clave cantidad que se añade en línea 16.
 
 function sumNumber(array){
     if(!array){
@@ -39,7 +48,7 @@ function sumNumber(array){
 
 function showNumber() {
     let number = document.getElementById('items-cart');
-    let memoryCheck = JSON.parse(localStorage.getItem("products"));
+    let memoryCheck = JSON.parse(localStorage.getItem("products")); //memoryCheck es una nueva variable porque memory es scope local. Solo verifica pero tiene que parsear de nuevo.
     if(!memoryCheck) {
         number.innerHTML = '0';
     }else {
@@ -48,5 +57,4 @@ function showNumber() {
     }
 }
 
-
-//Show number no puede ejecutarse en ningún lado porque el .map rompe al recibir un elemento que no es array o no es válido para su funcion hecha como el orto por los divinos que se juntan en los ES son unos autenticos genios chicos de verdad la rompen gracias por no dedicarse a otra cosa.
+//Funcion para realizar el cálculo de la compra con la información del carrito y luego mostrarla en el HTML (conjunta con funcion "" en main.js);

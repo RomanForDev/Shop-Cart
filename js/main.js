@@ -1,3 +1,5 @@
+//Funcion para crear las cards en la interfaz de usuario tomando los elementos de cada objeto en "shoes".
+
 let nuevaCard = document.getElementById('cards');
 
 function setCards(productos) {
@@ -15,3 +17,5 @@ function setCards(productos) {
 }
 
 setCards(shoes);
+
+//Funcion para escribir el HTML con la información del carrito.

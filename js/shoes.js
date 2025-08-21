@@ -1,3 +1,5 @@
+//Array de objetos para el e-commerce.
+
 const shoes = [{
     id: 1,
     name: "Adidas Campus Black",
