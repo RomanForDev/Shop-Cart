@@ -11,7 +11,6 @@ function writeCart(arr) {
             messageView.innerHTML = `<p>No hay productos en el carrito</p>
             <button id="back-button" class="back-button">Volver</button>`;
             cartView.appendChild(messageView);
-        console.log("No hay productos en el carrito");
     }else {
         arr.forEach(item => {
             const itemView = document.createElement("div");
