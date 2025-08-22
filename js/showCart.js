@@ -6,6 +6,11 @@ const memory = JSON.parse(localStorage.getItem("products"));
 
 function writeCart(arr) {
     if(!arr) {
+        const messageView = document.createElement("div");
+            messageView.classList = "item";
+            messageView.innerHTML = `<p>No hay productos en el carrito</p>
+            <button id="back-button" class="back-button">Volver</button>`;
+            cartView.appendChild(messageView);
         console.log("No hay productos en el carrito");
     }else {
         arr.forEach(item => {
@@ -19,6 +24,7 @@ function writeCart(arr) {
 }
 
 writeCart(memory);
+
 
 ////////////////////////////////////////////
 

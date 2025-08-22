@@ -57,5 +57,6 @@ function showNumber() {
         // console.log(memoryCheck);
     }
 }
+showNumber();
 
 //Funcion para realizar el cálculo de la compra con la información del carrito y luego mostrarla en el HTML (conjunta con funcion "writeCart" en main.js);
