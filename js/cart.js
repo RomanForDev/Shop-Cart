@@ -62,9 +62,9 @@ showNumber();
 
 //Función que elimina elementos que fueron añadidos al carrito;
 
-function deleteFromCart() {
+function deleteFromCart(item) {
     const memory = JSON.parse(localStorage.getItem("products"));
-    
+    memory.pop(item);
 }
 
 //Funcion para realizar el cálculo de la compra con la información del carrito y luego mostrarla en el HTML (conjunta con funcion "writeCart" en main.js);

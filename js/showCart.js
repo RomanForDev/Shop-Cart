@@ -1,5 +1,5 @@
 // Funcion para escribir el HTML con la información del carrito.
-// const cart = [];
+
 const cartView = document.getElementById('cards-cart');
 
 const memory = JSON.parse(localStorage.getItem("products"));
@@ -18,7 +18,7 @@ function writeCart(arr) {
             itemView.innerHTML = `<p>${item.name}, ${item.price}, x${item.cantidad}</p>
             <button id="del-button" class="button">Quitar</button>`;
             cartView.appendChild(itemView);
-            itemView.querySelectorAll("button")[0].addEventListener("click", ()=> console.log('Elemento quitado del carrito!'));
+            itemView.querySelectorAll("button")[0].addEventListener("click", ()=> deleteFromCart(item));
             //Si se quiere un boton para agregar y otro para quitar, descomentar línea 23 y copiar y pegar línea 25 despues de línea 19.
             // itemView.querySelectorAll("button")[1].addEventListener("click", ()=> console.log('Elemento quitado del carrito!'));
     })}
@@ -28,26 +28,23 @@ function writeCart(arr) {
 writeCart(memory);
 
 
-////////////////////////////////////////////
+// Función para sumar cantidades y precio total del carrito;
 
-// const nuevaCard = document.getElementById("cards-cart");
+function sum(array){
+    let cantidades = array.map(objeto => objeto.cantidad*objeto.price);
+    let sum = cantidades.reduce((a, b) => a + b, 0);
+    return sum;
+}
 
-// function showCards() {
-//     const products = JSON.parse(localStorage.getItem("products"));
-//     if(products && products.length > 0){
-//     products.forEach(producto => {
-//         const card = document.createElement("div");
-//         card.classList = "shoe-card";
-//         card.innerHTML = `
-//         <img class= "shoe-img" src=".${producto.img}">
-//         <h3 id="shoe-name" class="shoe-name" >${producto.name}</h3>
-//         <p id="shoe-price" class= "shoe-price">${producto.price}</p>
-//         <p id="shoe-id" class= "shoe-id">${producto.id}</p>
-//         <button id="add-button" class="cart-button">Agregar</button>
-//         `
-//         nuevaCard.appendChild(card);
-//         card.getElementsByClassName("cart-button")[0].addEventListener("click", ()=> addToCart(shoe));
-//     });
-// }}
+//Funcion que muestra el total de todo el carrito;
 
-// showCards();
+const showTotal = document.getElementById("total");
+
+function viewTotal() {
+    const total = document.createElement("span");
+    total.classList = 'total-number';
+    total.innerHTML = `Total a pagar: ${sum(memory)}`;
+    showTotal.appendChild(total);
+}
+
+viewTotal();
