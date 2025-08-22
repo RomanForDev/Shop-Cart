@@ -64,6 +64,7 @@ showNumber();
 
 function deleteFromCart(item) {
     const memory = JSON.parse(localStorage.getItem("products"));
+    memory.findIndex(item)
     memory.pop(item);
 }
 

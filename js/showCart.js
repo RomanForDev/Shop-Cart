@@ -18,8 +18,8 @@ function writeCart(arr) {
             itemView.innerHTML = `<p>${item.name}, ${item.price}, x${item.cantidad}</p>
             <button id="del-button" class="button">Quitar</button>`;
             cartView.appendChild(itemView);
-            itemView.querySelectorAll("button")[0].addEventListener("click", ()=> deleteFromCart(item));
-            //Si se quiere un boton para agregar y otro para quitar, descomentar línea 23 y copiar y pegar línea 25 despues de línea 19.
+            itemView.querySelectorAll("button")[0].addEventListener("click", ()=> deleteFromCart(memory));
+            //Si se quiere un boton para agregar junto al de quitar, descomentar línea 23 y copiar y pegar línea 25 despues de línea 19.
             // itemView.querySelectorAll("button")[1].addEventListener("click", ()=> console.log('Elemento quitado del carrito!'));
     })}
 }
