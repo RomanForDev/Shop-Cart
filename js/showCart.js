@@ -9,18 +9,21 @@ function writeCart(arr) {
         const messageView = document.createElement("div");
             messageView.classList = "item";
             messageView.innerHTML = `<p>No hay productos en el carrito</p>
-            <button id="back-button" class="back-button">Volver</button>`;
+            <a href="../index.html"><button id="back-button" class="button">Volver</button></a>`;
             cartView.appendChild(messageView);
     }else {
         arr.forEach(item => {
             const itemView = document.createElement("div");
             itemView.classList = "item";
             itemView.innerHTML = `<p>${item.name}, ${item.price}, x${item.cantidad}</p>
-            <button id="del-button" class="del-button">Quitar</button>`;
+            <button id="del-button" class="button">Quitar</button>`;
             cartView.appendChild(itemView);
-            cartView.getElementsByClassName("del-button")[0].addEventListener("click", ()=> console.log('Elemento quitado del carrito!'));
+            itemView.querySelectorAll("button")[0].addEventListener("click", ()=> console.log('Elemento quitado del carrito!'));
+            //Si se quiere un boton para agregar y otro para quitar, descomentar línea 23 y copiar y pegar línea 25 despues de línea 19.
+            // itemView.querySelectorAll("button")[1].addEventListener("click", ()=> console.log('Elemento quitado del carrito!'));
     })}
 }
+// }<button id="add-button" class="add-button">Agregar</button>`
 
 writeCart(memory);
 
