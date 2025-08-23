@@ -58,7 +58,7 @@ function showNumber() {
 }
 showNumber();
 
-// Funcion para realizar el cálculo de la compra con la información del carrito y luego mostrarla en el HTML (conjunta con funcion "writeCart" en main.js);
+//Función que elimina elementos que fueron añadidos al carrito;
 
 function deleteFromCart(producto) {
     const memoryCheckDelete = JSON.parse(localStorage.getItem("products"));
@@ -68,12 +68,11 @@ function deleteFromCart(producto) {
     }
     const deleteIndex = memoryCheckDelete.findIndex(item => item && item.id === producto.id);
     if (deleteIndex === -1) {
-        console.log("Producto no encontrado en el carrito.");
+        console.log("Producto no encontrado en el carrito."); // acá hay que hacer que elimine del display con inner.
         return;
     }
     console.log(deleteIndex);
-
-    // Ejemplo: Eliminar producto si la cantidad es 1, de lo contrario disminuir la cantidad
+    // Eliminar producto si la cantidad es 1 o si es mas disminuir la cantidad
     if (memoryCheckDelete[deleteIndex].cantidad === 1) {
         memoryCheckDelete.splice(deleteIndex, 1);
     } else {
@@ -83,5 +82,5 @@ function deleteFromCart(producto) {
     showNumber();
 }
 
-//Función que elimina elementos que fueron añadidos al carrito;
+
 
