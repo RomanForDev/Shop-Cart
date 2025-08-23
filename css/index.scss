@@ -1,0 +1,117 @@
+@use "./vars.scss" as *;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-family: $general-font;
+    background-color:$color-two;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+header {
+    box-shadow: $general-shadow;
+    nav{
+        font-family: $general-font;
+        font-weight: 700;
+        font-size:x-large;
+        background-color: $color-one;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 4rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        width: 100%;
+        #logo{
+            height: 50px;
+            width: 50px;
+        }
+        .navbar {
+                #items-cart {
+                    background-color: #2bff00;
+                    display: inline-block;
+                    border-radius: 100%;
+                    aspect-ratio: 1;
+                    text-align: center;
+                    width: 20px;
+                    line-height: 20px;
+                }
+                #img-cart {
+                    height: 40px;
+                    width: 40px;
+                }
+                #home-img {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+        .name {
+
+        }
+    }
+}
+main {
+    // height: 40rem; //esto se va a modificar
+    margin-top: 20px; // esto se va a ir
+    .cards {
+        display:grid;
+        justify-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 5rem;
+        column-gap: 8rem;
+        border-radius: 10px;
+        }
+        .shoe-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: space-between;
+            row-gap: 1rem;
+            padding: 1rem;
+            .shoe-img {
+                height: 20rem;
+                width: 20rem;
+            }
+            .shoe-name {
+                max-width: 15rem;
+                font-weight: 600;
+                font-size: x-large;
+            }
+            .shoe-price {
+                font-size: xx-large;
+                font-weight: 500;
+            }
+            .cart-button {
+                height: 2rem;
+                width: 6rem;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.226);
+            }
+        }
+    }
+
+    footer {
+    font-family: $general-font;
+    font-weight: 500;
+    background-color: $color-one;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -3px 4px rgba(0, 0, 0, 0.226);
+    margin-top: auto;
+    .media-img {
+        height: 35px;
+        width: 35px;
+    }
+    .media-img2 {
+        height: 35px;
+        width: 35px;
+    }
+}

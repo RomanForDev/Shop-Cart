@@ -1,4 +1,19 @@
+//Colors
+
 $color-one: #FFDCDC;
 $color-two: #FFF2EB;
 $color-three: #FFE8CD;
 $color-four: #FFD6BA;
+
+// Fonts
+
+@font-face {
+    font-family: "Quicksand", sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+}
+
+$general-font: "Quicksand";
+
+//Shadows
+
+$general-shadow: 0 2px 4px rgba(0, 0, 0, 0.226);
