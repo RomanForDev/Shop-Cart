@@ -13,7 +13,7 @@ body {
     height: 100vh;
 }
 header {
-    box-shadow: $general-shadow;
+    box-shadow: $shadow-down;
     nav{
         font-family: $general-font;
         font-weight: 700;
@@ -66,6 +66,11 @@ main {
         row-gap: 5rem;
         column-gap: 8rem;
         border-radius: 10px;
+        padding: 2rem;
+        :hover{
+        transform:scale(1.03) ;
+        transition: 0.3s;
+        }
         }
         .shoe-card {
             display: flex;
@@ -75,6 +80,7 @@ main {
             justify-content: space-between;
             row-gap: 1rem;
             padding: 1rem;
+            box-shadow: $shadow-boxes;// $shadow-up; //esto tiene que ir en un hover o con uno.
             .shoe-img {
                 height: 20rem;
                 width: 20rem;
@@ -89,9 +95,10 @@ main {
                 font-weight: 500;
             }
             .cart-button {
+                font-family: $general-font;
                 height: 2rem;
                 width: 6rem;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.226);
+                box-shadow: $shadow-down; // 0 2px 4px rgba(0, 0, 0, 0.226);
             }
         }
     }
@@ -104,7 +111,7 @@ main {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 -3px 4px rgba(0, 0, 0, 0.226);
+    box-shadow: $shadow-up; //0 -3px 4px rgba(0, 0, 0, 0.226);
     margin-top: auto;
     .media-img {
         height: 35px;

@@ -16,4 +16,6 @@ $general-font: "Quicksand";
 
 //Shadows
 
-$general-shadow: 0 2px 4px rgba(0, 0, 0, 0.226);
+$shadow-up: 0 -3px 4px rgba(0, 0, 0, 0.226);
+$shadow-down: 0 2px 4px rgba(0, 0, 0, 0.226);
+$shadow-boxes: 0 1px 3px rgba($color: #69696900, $alpha: 0.5);
