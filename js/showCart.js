@@ -4,21 +4,25 @@ const cartView = document.getElementById('cards-cart');
 
 const memory = JSON.parse(localStorage.getItem("products"));
 
-function writeCart(arr) {
-    if(!arr) {
+function writeCart() {
+    cartView.innerHTML = "";
+    if(!memory) {
         const messageView = document.createElement("div");
             messageView.classList = "item";
             messageView.innerHTML = `<p>No hay productos en el carrito</p>
             <a href="../index.html"><button id="back-button" class="button">Volver</button></a>`;
             cartView.appendChild(messageView);
     }else {
-        arr.forEach(item => {
+        memory.forEach(item => {
             const itemView = document.createElement("div");
             itemView.classList = "item";
             itemView.innerHTML = `<p>${item.name}, ${item.price}, x${item.cantidad}</p>
             <button id="del-button" class="button">Quitar</button>`;
             cartView.appendChild(itemView);
-            itemView.querySelectorAll("button")[0].addEventListener("click", ()=> deleteFromCart(memory));
+            itemView.querySelectorAll("button")[0].addEventListener("click", ()=> {
+                deleteFromCart(memory);
+                // addToCart()
+            });
             //Si se quiere un boton para agregar junto al de quitar, descomentar línea 23 y copiar y pegar línea 25 despues de línea 19.
             // itemView.querySelectorAll("button")[1].addEventListener("click", ()=> console.log('Elemento quitado del carrito!'));
     })}

@@ -17,7 +17,6 @@ function addToCart(producto) {
         }
         localStorage.setItem("products", JSON.stringify(newMemory));
         sumNumber();
-        // cart.push(newMemory);
         // console.log(newMemory); //Para control de la funcion.
         
     }
@@ -62,10 +61,15 @@ showNumber();
 
 //Función que elimina elementos que fueron añadidos al carrito;
 
-function deleteFromCart(item) {
-    const memory = JSON.parse(localStorage.getItem("products"));
-    memory.findIndex(item)
-    memory.pop(item);
+function deleteFromCart(producto) {
+    const memoryCheckDelete = JSON.parse(localStorage.getItem("products"));
+    const deleteIndex = memoryCheckDelete.findIndex(item => item.id === producto.id);
+    console.log(deleteIndex);
+    
+    // if(memory[deleteIndex].cantidad === 1) {
+    //     memory.splice(deleteIndex, 1);
+    //     localStorage.setItem("products", JSON.stringify(memory));
+    // }
 }
 
 //Funcion para realizar el cálculo de la compra con la información del carrito y luego mostrarla en el HTML (conjunta con funcion "writeCart" en main.js);
