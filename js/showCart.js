@@ -2,7 +2,7 @@
 
 const cartView = document.getElementById('cards-cart');
 
-const memory = JSON.parse(localStorage.getItem("products"));
+const memory = JSON.parse(localStorage.getItem("products")); // || [];
 
 function writeCart() {
     cartView.innerHTML = "";
@@ -21,9 +21,9 @@ function writeCart() {
             cartView.appendChild(itemView);
             itemView.querySelectorAll("button")[0].addEventListener("click", ()=> {
                 deleteFromCart(item);
-                // addToCart()
+                document.location.reload();
             });
-            //Si se quiere un boton para agregar junto al de quitar, descomentar línea 23 y copiar y pegar línea 25 despues de línea 19.
+            //Si se quiere un boton para agregar junto al de quitar, descomentar línea 24 y copiar y pegar línea 30 despues de línea 19.
             // itemView.querySelectorAll("button")[1].addEventListener("click", ()=> console.log('Elemento quitado del carrito!'));
     })}
 }

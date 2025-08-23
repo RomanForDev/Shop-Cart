@@ -62,13 +62,9 @@ showNumber();
 
 function deleteFromCart(producto) {
     const memoryCheckDelete = JSON.parse(localStorage.getItem("products"));
-    if (!memoryCheckDelete) {
-        console.log("No hay productos en el carrito.");
-        return;
-    }
     const deleteIndex = memoryCheckDelete.findIndex(item => item && item.id === producto.id);
-    if (deleteIndex === -1) {
-        console.log("Producto no encontrado en el carrito."); // acá hay que hacer que elimine del display con inner.
+    if (deleteIndex === -1) {;
+        console.log("Producto no encontrado en el carrito.");
         return;
     }
     console.log(deleteIndex);
