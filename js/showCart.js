@@ -20,7 +20,7 @@ function writeCart() {
             <button id="del-button" class="button">Quitar</button>`;
             cartView.appendChild(itemView);
             itemView.querySelectorAll("button")[0].addEventListener("click", ()=> {
-                deleteFromCart(memory);
+                deleteFromCart(item);
                 // addToCart()
             });
             //Si se quiere un boton para agregar junto al de quitar, descomentar línea 23 y copiar y pegar línea 25 despues de línea 19.
