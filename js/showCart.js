@@ -2,7 +2,7 @@
 
 const cartView = document.getElementById('cards-cart');
 
-const memory = JSON.parse(localStorage.getItem("products")) || [];
+const memory = JSON.parse(localStorage.getItem("products")) // || [];
 
 function writeCart() {
     cartView.innerHTML = "";
