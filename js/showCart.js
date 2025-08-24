@@ -2,7 +2,7 @@
 
 const cartView = document.getElementById('cards-cart');
 
-const memory = JSON.parse(localStorage.getItem("products")); // || [];
+const memory = JSON.parse(localStorage.getItem("products")) || [];
 
 function writeCart() {
     cartView.innerHTML = "";
@@ -12,6 +12,7 @@ function writeCart() {
             messageView.innerHTML = `<p>No hay productos en el carrito</p>
             <a href="../index.html"><button id="back-button" class="button">Volver</button></a>`;
             cartView.appendChild(messageView);
+            // viewTotal();
     }else {
         memory.forEach(item => {
             const itemView = document.createElement("div");
@@ -21,11 +22,12 @@ function writeCart() {
             cartView.appendChild(itemView);
             itemView.querySelectorAll("button")[0].addEventListener("click", ()=> {
                 deleteFromCart(item);
-                document.location.reload();
+                // document.location.reload(); //Ver si se puede reemplazar porque es mala práctica.
             });
             //Si se quiere un boton para agregar junto al de quitar, descomentar línea 24 y copiar y pegar línea 30 despues de línea 19.
             // itemView.querySelectorAll("button")[1].addEventListener("click", ()=> console.log('Elemento quitado del carrito!'));
-    })}
+        })}
+        viewTotal();
 }
 // }<button id="add-button" class="add-button">Agregar</button>`
 
@@ -45,6 +47,7 @@ function sum(array){
 const showTotal = document.getElementById("total");
 
 function viewTotal() {
+    //probar metiendo un if que chequee la memoria primero.
     const total = document.createElement("span");
     total.classList = 'total-number';
     total.innerHTML = `Total a pagar: ${sum(memory)}`;

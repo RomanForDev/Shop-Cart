@@ -12,7 +12,7 @@ function setCards(productos) {
         <p id="shoe-price" class= "shoe-price">$${shoe.price}</p>
         <button id="add-button" class="cart-button">Agregar</button>`
         nuevaCard.appendChild(card);
-        card.getElementsByClassName("cart-button")[0].addEventListener("click", ()=> addToCart(shoe));
+        card.getElementsByClassName("cart-button")[0].addEventListener("click", ()=> addToCart(shoe)); //Acá va toastify.
     });
 }
 
