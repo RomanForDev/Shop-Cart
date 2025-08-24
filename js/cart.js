@@ -18,7 +18,6 @@ function addToCart(producto) {
         localStorage.setItem("products", JSON.stringify(newMemory));
         sumNumber();
         // console.log(newMemory); //Para control de la funcion.
-        
     }
 }
 
@@ -63,11 +62,11 @@ showNumber();
 function deleteFromCart(producto) {
     const memoryCheckDelete = JSON.parse(localStorage.getItem("products"));
     const deleteIndex = memoryCheckDelete.findIndex(item => item && item.id === producto.id);
-    if (deleteIndex === -1) {;
+    if (deleteIndex === -1) {
         console.log("Producto no encontrado en el carrito.");
         return;
     }
-    console.log(deleteIndex);
+    // console.log(deleteIndex);
     // Eliminar producto si la cantidad es 1 o si es mas disminuir la cantidad
     if (memoryCheckDelete[deleteIndex].cantidad === 1) {
         memoryCheckDelete.splice(deleteIndex, 1);

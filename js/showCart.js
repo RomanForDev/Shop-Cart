@@ -6,11 +6,11 @@ const memory = JSON.parse(localStorage.getItem("products")) // || [];
 
 function writeCart() {
     cartView.innerHTML = "";
-    if(!memory) {
+    if(!memory || memory.length === 0) {
         const messageView = document.createElement("div");
             messageView.classList = "item";
             messageView.innerHTML = `<p>No hay productos en el carrito</p>
-            <a href="../index.html"><button id="back-button" class="button">Volver</button></a>`;
+            <a href="../index.html"><button id="back-button" class="back-button">Volver</button></a>`;
             cartView.appendChild(messageView);
             // viewTotal();
     }else {
@@ -22,12 +22,11 @@ function writeCart() {
             cartView.appendChild(itemView);
             itemView.querySelectorAll("button")[0].addEventListener("click", ()=> {
                 deleteFromCart(item);
-                // document.location.reload(); //Ver si se puede reemplazar porque es mala práctica.
+                document.location.reload(); //Ver si se puede reemplazar porque es mala práctica.
             });
             //Si se quiere un boton para agregar junto al de quitar, descomentar línea 24 y copiar y pegar línea 30 despues de línea 19.
             // itemView.querySelectorAll("button")[1].addEventListener("click", ()=> console.log('Elemento quitado del carrito!'));
         })}
-        viewTotal();
 }
 // }<button id="add-button" class="add-button">Agregar</button>`
 
