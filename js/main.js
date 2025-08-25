@@ -18,4 +18,15 @@ function setCards(productos) {
 
 setCards(shoes);
 
+// Funcion para carga del .json con los productos;
+
+
+const callData= async()=> {
+    let call = await fetch('./data/shoes.json');
+    let data = await call.json();
+    console.log(data);
+}
+
+
+callData();
 
