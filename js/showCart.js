@@ -49,7 +49,7 @@ function viewTotal() {
     //probar metiendo un if que chequee la memoria primero.
     const total = document.createElement("span");
     total.classList = 'total-number';
-    total.innerHTML = `Total a pagar: ${sum(memory)}`;
+    total.innerHTML = `Total a pagar: ${sum(memory).toFixed(2)}`;
     showTotal.appendChild(total);
 }
 
