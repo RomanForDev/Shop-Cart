@@ -6,8 +6,7 @@ Modelo de carrito de compras básico y funcional para e-commerce con Javascript 
 
 Resta al proyecto:
 * Toastify.
-* Media Querys (hay un overflow desde 1823).
-* Hacer reactivo el grid donde se muestran las cards para adaptarse a la cantidad de ítems y cambiar color de backgroun a las cards.
+* Media Querys (hay un overflow). mobile (320-480px), tablets (481-768px), portátiles (769-1024px) y escritorios (1025px+)
+* Hacer reactivo el grid donde se muestran las cards para adaptarse a la cantidad de ítems.
 * Ver si se puede corregir document.location.reload().
-* Darle estilo a los botones y mejorar footer.
 * Cargarla en GitHub Pages.
