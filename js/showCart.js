@@ -10,7 +10,7 @@ function writeCart() {
         const messageView = document.createElement("div");
             messageView.classList = "item";
             messageView.innerHTML = `<p>No hay productos en el carrito</p>
-            <a href="../index.html"><button id="back-button" class="back-button">Volver</button></a>`;
+            <a href="../index.html"><button id="cart-button" class="back-button">Volver</button></a>`;
             cartView.appendChild(messageView);
             // viewTotal();
     }else {
@@ -18,7 +18,7 @@ function writeCart() {
             const itemView = document.createElement("div");
             itemView.classList = "item";
             itemView.innerHTML = `<p>${item.name}, ${item.price}, x${item.cantidad}</p>
-            <button id="del-button" class="button">Quitar</button>`;
+            <button id="del-button" class="cart-button">Quitar</button>`;
             cartView.appendChild(itemView);
             itemView.querySelectorAll("button")[0].addEventListener("click", ()=> {
                 deleteFromCart(item);

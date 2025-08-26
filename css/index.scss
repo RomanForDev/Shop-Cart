@@ -7,18 +7,18 @@
 }
 body {
     font-family: $general-font;
-    background-color:$color-two;
+    background-color:$trial-color-one;
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 header {
     box-shadow: $shadow-down;
+    background-color: $trial-color-three;
     nav{
         font-family: $general-font;
         font-weight: 700;
         font-size:x-large;
-        background-color: $color-one;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -33,7 +33,7 @@ header {
         }
         .navbar {
                 #items-cart {
-                    background-color: #2bff00;
+                    background-color: #ff7b00;
                     display: inline-block;
                     border-radius: 100%;
                     aspect-ratio: 1;
@@ -58,13 +58,15 @@ header {
 main {
     // height: 40rem; //esto se va a modificar
     margin-top: 20px; // esto se va a ir
+    padding-left: 4rem;
+    padding-right: 4rem;
     .cards {
         display:grid;
         justify-items: center;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
         row-gap: 5rem;
-        column-gap: 8rem;
+        column-gap: 3rem;
         border-radius: 10px;
         padding: 2rem;
         :hover{
@@ -73,6 +75,7 @@ main {
         }
         }
         .shoe-card {
+            background-color: $trial-color-two; //color-one;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -95,10 +98,11 @@ main {
                 font-weight: 500;
             }
             .cart-button {
+                background-color: $trial-color-four;
                 font-family: $general-font;
                 height: 2rem;
-                width: 6rem;
-                box-shadow: $shadow-down; // 0 2px 4px rgba(0, 0, 0, 0.226);
+                width: 4rem;
+                border-radius: 10%; // 0 2px 4px rgba(0, 0, 0, 0.226);
             }
         }
     }
@@ -106,7 +110,7 @@ main {
     footer {
     font-family: $general-font;
     font-weight: 500;
-    background-color: $color-one;
+    background-color: $trial-color-three;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -114,11 +118,13 @@ main {
     box-shadow: $shadow-up; //0 -3px 4px rgba(0, 0, 0, 0.226);
     margin-top: auto;
     .media-img {
-        height: 35px;
-        width: 35px;
+        padding: 0.2rem;
+        height: 45px;
+        width: 45px;
     }
     .media-img2 {
-        height: 35px;
-        width: 35px;
+        padding: 0.2rem;
+        height: 45px;
+        width: 45px;
     }
 }
