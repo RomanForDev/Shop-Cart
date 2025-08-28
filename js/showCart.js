@@ -21,7 +21,10 @@ function writeCart() {
             cartView.appendChild(itemView);
             itemView.querySelectorAll("button")[0].addEventListener("click", ()=> {
                 deleteFromCart(item);
-                document.location.reload(); //Ver si se puede reemplazar porque es mala práctica.
+                // Actualizar la vista del carrito dinámicamente
+                updateCartView();
+                // Actualizar el total
+                updateTotal();
             });
             //Si se quiere un boton para agregar junto al de quitar, descomentar línea 24 y copiar y pegar línea 30 despues de línea 19.
             // itemView.querySelectorAll("button")[1].addEventListener("click", ()=> console.log('Elemento quitado del carrito!'));
@@ -52,6 +55,39 @@ function viewTotal() {
 }
 
 viewTotal();
+
+
+// Función para actualizar la vista del carrito
+function updateCartView() {
+    const updatedMemory = JSON.parse(localStorage.getItem("products"));
+    memory.length = 0; // Limpiar el array de memoria
+    if (updatedMemory) {
+        updatedMemory.forEach(item => memory.push(item));
+    }
+    writeCart();
+    
+    // Actualizar también el número del carrito en el header
+    updateCartNumber();
+}
+
+// Función para actualizar el número del carrito en el header
+function updateCartNumber() {
+    const cartNumberElement = document.getElementById('items-cart');
+    if (cartNumberElement) {
+        if (!memory || memory.length === 0) {
+            cartNumberElement.innerHTML = '0';
+        } else {
+            const totalItems = memory.reduce((sum, item) => sum + item.cantidad, 0);
+            cartNumberElement.innerHTML = totalItems;
+        }
+    }
+}
+
+// Función para actualizar el total
+function updateTotal() {
+    showTotal.innerHTML = "";
+    viewTotal();
+}
 
 // Notificacion de producto eliminado del carrito;
 
