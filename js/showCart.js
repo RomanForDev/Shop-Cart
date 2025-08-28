@@ -48,10 +48,11 @@ function sum(array){
 const showTotal = document.getElementById("total");
 
 function viewTotal() {
+    if(memory){
     const total = document.createElement("span");
     total.classList = 'total-number';
     total.innerHTML = `Total a pagar: ${sum(memory).toFixed(2)}`;
-    showTotal.appendChild(total);
+    showTotal.appendChild(total);}
 }
 
 viewTotal();
