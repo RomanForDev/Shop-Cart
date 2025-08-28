@@ -89,6 +89,12 @@ function updateTotal() {
     viewTotal();
 }
 
+// Función para reinicio del carrito;
+
+const reset = () => document.getElementById('reset-cart').addEventListener('click', () => {
+    memory.clear();} //No está terminado pero es una idea.
+)
+
 // Notificacion de producto eliminado del carrito;
 
 function notificationConfirm(){
