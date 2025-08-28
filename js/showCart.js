@@ -91,12 +91,12 @@ function updateTotal() {
 
 // Función para reinicio del carrito;
 
-const reset = () => document.getElementById('reset-cart').addEventListener('click', () => {
-    memory.splice(0, memory.length);
+const reset = document.getElementById('reset-cart');
+reset.addEventListener('click', () => {
+    localStorage.removeItem("products");
     updateCartView();
-    updateCartNumber();
-    updateTotal();} //No está terminado pero es una idea.
-)
+    updateTotal();}
+);
 
 // Notificacion de producto eliminado del carrito;
 
