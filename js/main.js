@@ -4,7 +4,6 @@
 const callData= async()=> {
     let call = await fetch('./data/shoes.json');
     let data = await call.json();
-    // console.log(data);
     const nuevaCard = document.getElementById('cards');
     data.forEach(shoe => {
         const card = document.createElement("div");
