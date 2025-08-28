@@ -12,7 +12,6 @@ function writeCart() {
             messageView.innerHTML = `<p>No hay productos en el carrito</p>
             <a href="../index.html"><button id="cart-button" class="back-button">Volver</button></a>`;
             cartView.appendChild(messageView);
-            // viewTotal();
     }else {
         memory.forEach(item => {
             const itemView = document.createElement("div");
@@ -46,7 +45,6 @@ function sum(array){
 const showTotal = document.getElementById("total");
 
 function viewTotal() {
-    //probar metiendo un if que chequee la memoria primero.
     const total = document.createElement("span");
     total.classList = 'total-number';
     total.innerHTML = `Total a pagar: ${sum(memory).toFixed(2)}`;
