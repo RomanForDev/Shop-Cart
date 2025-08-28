@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-        <style>@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');</style>
-    <script src="../js/cart.js" defer></script>
-    <script src="../js/showCart.js" defer></script>
+    <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');</style>
+    <!-- <script src="../js/cart.js" defer></script>
+    <script src="../js/showCart.js" defer></script> -->
     <title>Document</title>
 </head>
 <body>
@@ -23,8 +24,18 @@
     </header>
     <main class="main-cart">
         <section id="cards-cart" class="cards-cart"></section>
-        <section class="total" id="total"></section>
+        <section class="total" id="total">
+        </section>
+        <div id="buttons-gral-cart" class="cart-gral-button">
+            <button>Confirmar Compra</button>
+            <button>Reiniciar Carrito</button>
+        </div>
     </main>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="sweetalert2.min.js"></script> -->
+        <script src="../js/cart.js" defer></script>
+        <script src="../js/showCart.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <footer>
         <p>RomanForDev/Shop Cart</p>
         <div>

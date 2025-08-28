@@ -52,3 +52,15 @@ function viewTotal() {
 }
 
 viewTotal();
+
+// Notificacion de producto eliminado del carrito;
+
+function notificationConfirm(){
+    Swal.fire({
+    position: "bottom-start",
+    icon: "success",
+    title: "Gracias por su compra! Será redirigido a su sitio de pagos.",
+    showConfirmButton: false,
+    timer: 1500
+    });
+}; //No voy a usar esta notificación para esto, prefiero una con timer en la view.

@@ -7,13 +7,16 @@ function addToCart(producto) {
         const nuevoProducto = addToMemory(producto);
         localStorage.setItem("products", JSON.stringify([nuevoProducto]));
         sumNumber();
+        notificationAdded();
     } else {
         const indiceProducto = memory.findIndex(shoe => shoe.id === producto.id);
         const newMemory = memory;
         if(indiceProducto === -1) {
             newMemory.push(addToMemory(producto));
+            notificationAdded();
         } else {
             newMemory[indiceProducto].cantidad ++;
+            notificationAdded();
         }
         localStorage.setItem("products", JSON.stringify(newMemory));
         sumNumber();

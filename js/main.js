@@ -36,4 +36,15 @@ callData();
 //     });
 // }
 
+//Notificacione de product oañadido al carrito;
+
+function notificationAdded(){
+    Swal.fire({
+    position: "bottom-start",
+    icon: "success",
+    title: "Producto añadido al carrito",
+    showConfirmButton: false,
+    timer: 1000
+    });
+};
 
