@@ -25,6 +25,7 @@ function writeCart() {
                 updateCartView();
                 // Actualizar el total
                 updateTotal();
+                notificationDelete();
             });
             //Si se quiere un boton para agregar junto al de quitar, descomentar línea 24 y copiar y pegar línea 30 despues de línea 19.
             // itemView.querySelectorAll("button")[1].addEventListener("click", ()=> console.log('Elemento quitado del carrito!'));
@@ -94,19 +95,77 @@ function updateTotal() {
 
 const reset = document.getElementById('reset-cart');
 reset.addEventListener('click', () => {
-    localStorage.removeItem("products");
-    updateCartView();
-    updateTotal();}
-);
+    // Notificación de reinicio del carrito; Esto hay que añadirlo a la función para que se ejecute con el confirm y luego muestre el mensaje de la confirmación.
+    resetCart();
+    // Swal.fire({
+    //     title: "Are you sure?",
+    //     text: "You won't be able to revert this!",
+    //     icon: "warning",
+    //     showCancelButton: true,
+    //     confirmButtonColor: "#3085d6",
+    //     cancelButtonColor: "#d33",
+    //     confirmButtonText: "Yes, delete it!",
+    //     target: 'body',
+    //     topLayer: `true`
+    // }).then((result) => {
+    //     if (result.isConfirmed) {
+    //         localStorage.removeItem("products");
+    //         updateCartView();
+    //         updateTotal();
+    //         Swal.fire({
+    //             title: "Deleted!",
+    //             text: "Your file has been deleted.",
+    //             icon: "success",
+    //             target: 'body',
+    //             topLayer: `true`
+    //     });
+    // }});
+}); //ver si poniendo todo en una función y llamando a la función idrectamente desde el botón puedo. Porque está moviendo el footer al estar ya dentro de una clase el botón con el listener. Y el topLayer bien gracias...
+
 
 // Notificacion de producto eliminado del carrito;
 
-function notificationConfirm(){
+function notificationDelete(){
     Swal.fire({
     position: "bottom-start",
     icon: "success",
-    title: "Gracias por su compra! Será redirigido a su sitio de pagos.",
+    title: "Producto eliminado!",
     showConfirmButton: false,
-    timer: 1500
+    timer: 1500,
+    background: '#686868ff',
+    color: '#ffffff',
+    width: '13em',
+    backdrop: false,
+    target: 'body'
     });
-}; //No voy a usar esta notificación para esto, prefiero una con timer en la view.
+}; 
+
+// Notificación de reinicio del carrito; Est ohay que añadirlo a la función para que se ejecute con el confirm y luego muestre el mensaje de la confirmación.
+
+function resetCart() {
+        Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+        target: 'body',
+        topLayer: `false`,
+        scrollbarPadding: 'false'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            localStorage.removeItem("products");
+            updateCartView();
+            updateTotal();
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+                target: 'body',
+                topLayer: `false`,
+                scrollbarPadding: 'false'
+        });
+    }});
+}; // VER PORQUE MIERDA ESTO MUEVE EL FOOTER PORQUE NO TIENE NINGÚN SENTIDO QUE LO HAGA!!!!!!!!!!!!!!

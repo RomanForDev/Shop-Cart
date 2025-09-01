@@ -44,7 +44,11 @@ function notificationAdded(){
     icon: "success",
     title: "Producto añadido al carrito",
     showConfirmButton: false,
-    timer: 1000
+    timer: 700,
+    background: '#686868ff',
+    color: '#ffffff',
+    width: '13em',
+    backdrop: false
     });
 };
 
