@@ -105,6 +105,9 @@ main .shoe-card .cart-button {
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   font-family: "Quicksand";
   font-weight: 500;
   background-color: #FAF1E6;

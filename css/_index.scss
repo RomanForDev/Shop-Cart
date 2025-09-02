@@ -107,7 +107,10 @@ main {
         }
     }
 
-    footer {
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     font-family: $general-font;
     font-weight: 500;
     background-color: $trial-color-three;
