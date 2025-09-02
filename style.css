@@ -136,6 +136,7 @@ footer .media-img2 {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  margin-top: 8dvh;
 }
 .main-cart .cards-cart {
   border: 2px solid rgba(104, 104, 104, 0.3019607843);
@@ -150,11 +151,12 @@ footer .media-img2 {
   justify-content: space-between;
   gap: 0.8rem;
 }
-.main-cart .cards-cart .item .cart-button {
+
+button {
   background-color: rgba(104, 104, 104, 0.3019607843);
   font-family: "Quicksand";
-  height: 2rem;
-  width: 4rem;
+  height: fit-content;
+  width: 6rem;
   border-radius: 10%;
 }
 

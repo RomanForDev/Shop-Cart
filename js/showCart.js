@@ -104,7 +104,7 @@ reset.addEventListener('click', () => {
     }
 }); 
 
-// Función de confirmación de compra;
+// Función de confirmación de compra. Llamado a la función completa con alertas.
 
 const confirmation = document.getElementById('confirm-cart');
 confirmation.addEventListener('click', () => {
@@ -119,7 +119,7 @@ function notificationDelete(){
     icon: "success",
     title: "Producto eliminado!",
     showConfirmButton: false,
-    timer: 1500,
+    timer: 1200,
     background: '#686868ff',
     color: '#ffffff',
     width: '13em',
@@ -147,7 +147,7 @@ function confirmBuy() {
     }).then((result) => {
         if (result.isConfirmed) {
             checkMemoryAgain = JSON.parse(localStorage.getItem("products"));
-            //Chequea si hay elementos en el carrito primero antes de confirmar la compra.
+            //Chequea si hay elementos en el carrito primero antes de confirmar la compra. Si no hubiere, emite una alerta.
             if(!checkMemoryAgain) {
                 Swal.fire({
                     icon: "error",
@@ -164,7 +164,7 @@ function confirmBuy() {
             let timerInterval;
             Swal.fire({
             title: "Gracias por tu compra!",
-            html: "Serás redirigido a Mercado Pago en <b></b> segundos.",
+            html: "Serás redirigido a Mercado Pago en <b></b> segundos.", //Acá se puede agregar redirección.
             timer: 3000,
             timerProgressBar: true,
             background: '#686868ff',
@@ -181,7 +181,7 @@ function confirmBuy() {
             }
             }).then((result) => {
             if (result.dismiss === Swal.DismissReason.timer) {
-                console.log("I was closed by the timer");
+                console.log("I was closed by the timer"); // Lo trae sweetAlert pero imagino que es porque no puede quedar la función vacía.
             }
             })};
     }});
