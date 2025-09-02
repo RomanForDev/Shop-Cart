@@ -126,14 +126,13 @@ function notificationDelete(){
     backdrop: false,
     target: 'body'
     });
-}; // Esta notificación hace qeu la página se mueva. Ver por que.
+};
 
-// Notificación de reinicio del carrito; Esto hay que añadirlo a la función para que se ejecute con el confirm y luego muestre el mensaje de la confirmación.
+// Notificación de confirmación de compra;
 
 function confirmBuy() {
         Swal.fire({
         title: "Quieres confirmar la compra?",
-        // text: "You won't be able to revert this!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -142,10 +141,13 @@ function confirmBuy() {
         cancelButtonText: "Cancelar",
         target: 'body',
         topLayer: `false`,
-        scrollbarPadding: 'false'
+        scrollbarPadding: 'false',
+        background: '#686868ff',
+        color: '#ffffff',
     }).then((result) => {
         if (result.isConfirmed) {
             checkMemoryAgain = JSON.parse(localStorage.getItem("products"));
+            //Chequea si hay elementos en el carrito primero antes de confirmar la compra.
             if(!checkMemoryAgain) {
                 Swal.fire({
                     icon: "error",
@@ -165,6 +167,8 @@ function confirmBuy() {
             html: "Serás redirigido a Mercado Pago en <b></b> segundos.",
             timer: 3000,
             timerProgressBar: true,
+            background: '#686868ff',
+            color: '#ffffff',
             didOpen: () => {
                 Swal.showLoading();
                 const timer = Swal.getPopup().querySelector("b");
@@ -176,18 +180,9 @@ function confirmBuy() {
                 clearInterval(timerInterval);
             }
             }).then((result) => {
-            /* Read more about handling dismissals below */
             if (result.dismiss === Swal.DismissReason.timer) {
                 console.log("I was closed by the timer");
             }
             })};
-        //     Swal.fire({
-        //         title: "Deleted!",
-        //         text: "Your file has been deleted.",
-        //         icon: "success",
-        //         target: 'body',
-        //         topLayer: `false`,
-        //         scrollbarPadding: 'false'
-        // });
     }});
-}; // VER PORQUE MIERDA ESTO MUEVE EL FOOTER PORQUE NO TIENE NINGÚN SENTIDO QUE LO HAGA!!!!!!!!!!!!!!
+};
