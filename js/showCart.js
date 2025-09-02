@@ -95,33 +95,21 @@ function updateTotal() {
 
 const reset = document.getElementById('reset-cart');
 reset.addEventListener('click', () => {
-    // Notificación de reinicio del carrito; Esto hay que añadirlo a la función para que se ejecute con el confirm y luego muestre el mensaje de la confirmación.
-    resetCart();
-    // Swal.fire({
-    //     title: "Are you sure?",
-    //     text: "You won't be able to revert this!",
-    //     icon: "warning",
-    //     showCancelButton: true,
-    //     confirmButtonColor: "#3085d6",
-    //     cancelButtonColor: "#d33",
-    //     confirmButtonText: "Yes, delete it!",
-    //     target: 'body',
-    //     topLayer: `true`
-    // }).then((result) => {
-    //     if (result.isConfirmed) {
-    //         localStorage.removeItem("products");
-    //         updateCartView();
-    //         updateTotal();
-    //         Swal.fire({
-    //             title: "Deleted!",
-    //             text: "Your file has been deleted.",
-    //             icon: "success",
-    //             target: 'body',
-    //             topLayer: `true`
-    //     });
-    // }});
-}); //ver si poniendo todo en una función y llamando a la función idrectamente desde el botón puedo. Porque está moviendo el footer al estar ya dentro de una clase el botón con el listener. Y el topLayer bien gracias...
+    try{
+    localStorage.removeItem("products");
+    updateCartView();
+    updateTotal();
+    }catch(err) {
+        console.log("No hay elementos en el carrito!"); //Sólo para que no muestre error en consola, muestra el log.
+    }
+}); 
 
+// Función de confirmación de compra;
+
+const confirmation = document.getElementById('confirm-cart');
+confirmation.addEventListener('click', () => {
+    confirmBuy();
+})
 
 // Notificacion de producto eliminado del carrito;
 
@@ -138,34 +126,54 @@ function notificationDelete(){
     backdrop: false,
     target: 'body'
     });
-}; 
+}; // Esta notificación hace qeu la página se mueva. Ver por que.
 
-// Notificación de reinicio del carrito; Est ohay que añadirlo a la función para que se ejecute con el confirm y luego muestre el mensaje de la confirmación.
+// Notificación de reinicio del carrito; Esto hay que añadirlo a la función para que se ejecute con el confirm y luego muestre el mensaje de la confirmación.
 
-function resetCart() {
+function confirmBuy() {
         Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        title: "Quieres confirmar la compra?",
+        // text: "You won't be able to revert this!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!",
+        confirmButtonText: "Si, confirmar!",
+        cancelButtonText: "Cancelar",
         target: 'body',
         topLayer: `false`,
         scrollbarPadding: 'false'
     }).then((result) => {
         if (result.isConfirmed) {
-            localStorage.removeItem("products");
-            updateCartView();
-            updateTotal();
+            let timerInterval;
             Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success",
-                target: 'body',
-                topLayer: `false`,
-                scrollbarPadding: 'false'
-        });
+            title: "Gracias por tu compra!",
+            html: "Serás redirigido a Mercado Pago en <b></b> segundos.",
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading();
+                const timer = Swal.getPopup().querySelector("b");
+                timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+                }, 100);
+            },
+            willClose: () => {
+                clearInterval(timerInterval);
+            }
+            }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+                console.log("I was closed by the timer");
+            }
+            });
+        //     Swal.fire({
+        //         title: "Deleted!",
+        //         text: "Your file has been deleted.",
+        //         icon: "success",
+        //         target: 'body',
+        //         topLayer: `false`,
+        //         scrollbarPadding: 'false'
+        // });
     }});
 }; // VER PORQUE MIERDA ESTO MUEVE EL FOOTER PORQUE NO TIENE NINGÚN SENTIDO QUE LO HAGA!!!!!!!!!!!!!!
