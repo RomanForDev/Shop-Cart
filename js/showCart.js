@@ -145,6 +145,20 @@ function confirmBuy() {
         scrollbarPadding: 'false'
     }).then((result) => {
         if (result.isConfirmed) {
+            checkMemoryAgain = JSON.parse(localStorage.getItem("products"));
+            if(!checkMemoryAgain) {
+                Swal.fire({
+                    icon: "error",
+                    title: "No hay nada en el carrito!",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    background: '#686868ff',
+                    color: '#ffffff',
+                    width: '13em',
+                    backdrop: false,
+                    target: 'body'
+                })
+            }else {
             let timerInterval;
             Swal.fire({
             title: "Gracias por tu compra!",
@@ -166,7 +180,7 @@ function confirmBuy() {
             if (result.dismiss === Swal.DismissReason.timer) {
                 console.log("I was closed by the timer");
             }
-            });
+            })};
         //     Swal.fire({
         //         title: "Deleted!",
         //         text: "Your file has been deleted.",
