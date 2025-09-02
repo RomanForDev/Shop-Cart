@@ -43,12 +43,12 @@ header {
                     line-height: 20px;
                 }
                 #img-cart {
-                    height: 40px;
-                    width: 40px;
+                    height: auto;
+                    max-width: 100%;
                 }
                 #home-img {
-                    height: 40px;
-                    width: 40px;
+                    height: auto;
+                    max-width: 100%;
                 }
             }
         .name {
@@ -63,8 +63,8 @@ main {
     .cards {
         display:grid;
         justify-items: center;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));//repeat(4, 1fr);
+        grid-template-rows: repeat(auto-fit, minmax(min-width, 1fr));//repeat(2, 1fr);
         row-gap: 3vw;
         column-gap: 2vw;
         border-radius: 10px;

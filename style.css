@@ -47,12 +47,12 @@ header nav .navbar #items-cart {
   line-height: 20px;
 }
 header nav .navbar #img-cart {
-  height: 40px;
-  width: 40px;
+  height: auto;
+  max-width: 100%;
 }
 header nav .navbar #home-img {
-  height: 40px;
-  width: 40px;
+  height: auto;
+  max-width: 100%;
 }
 main {
   padding-left: 3vw;
@@ -61,8 +61,8 @@ main {
 main .cards {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(min-width, 1fr));
   row-gap: 3vw;
   column-gap: 2vw;
   border-radius: 10px;
