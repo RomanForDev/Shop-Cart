@@ -6,5 +6,4 @@ Modelo de carrito de compras básico y funcional para e-commerce con Javascript 
 
 Resta al proyecto:
 * Media Querys para: mobile (320-480px), tablets (481-768px) en cart.html. (No son muy necesarios en index.html, las cards ya estan en medidas responsive, cuanto mucho para achicar el tamaño de logos y fuentes).
-* Ver si se agregan animaciones.
 * Rever paleta de colores y estilos.

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <style>@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');</style>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Document</title>
     <!-- <script src="./js/shoes.js"></script>
     <script src="./js/cart.js" defer></script>
@@ -14,16 +16,17 @@
 
     <header>
         <nav>
-            <img src="./img/logo.png" id="logo" alt="">
+            <img src="./img/logo.png" id="logo" alt=""data-aos="fade-right"data-aos-anchor="#example-anchor"data-aos-offset="500"data-aos-duration="500">
             <p id="name">Nombre del negocio</p>
-            <div class="navbar">
+            <div class="navbar" data-aos="fade-left"data-aos-anchor="#example-anchor"data-aos-offset="500"data-aos-duration="500">
                 <a href="./index.html"><img src="./img/home2.png" id="home-img" alt=""></a>
                 <a href="./pages/cart.html"><img src="./img/cart.png" id="img-cart" alt=""><span id="items-cart" class="items-cart">0</span></a>
             </div class="navbar">
         </nav>
     </header>
     <main>
-        <section id="cards" class="cards">
+        <section id="cards"class="cards"  data-aos="fade-up"
+    data-aos-duration="1000">
             <!-- seccion para que se generern las cards desde JS -->
         </section>
     </main>
@@ -31,6 +34,8 @@
         <script src="./js/cart.js" defer></script>
         <script src="./js/main.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>AOS.init();</script>
     <footer>
         <p>RomanForDev/Shop Cart</p>
         <div>
