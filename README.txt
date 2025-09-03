@@ -7,4 +7,4 @@ Basic and functional shopping cart template for e-commerce with vanilla Javascri
 Resta al proyecto:
 * Media Querys para: mobile (320-480px), tablets (481-768px) en cart.html. (No son muy necesarios en index.html, las cards ya estan en medidas responsive, cuanto mucho para achicar el tamaño de logos y fuentes).
 * Rever paleta de colores y estilos.
-* Solucionar carrito que emite la alerta de confirmacion de compra cuando se borran todos los elementos uno por uno pese a no haber nada ya en la memoria.
+* Solucionar carrito que emite la alerta de confirmacion de compra cuando se borran todos los elementos uno por uno pese a no haber nada ya en la memoria. (probar con el llamado a la función desde el botón de compra para qeu chequee primero la memoria siempre.)

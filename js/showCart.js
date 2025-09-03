@@ -146,9 +146,9 @@ function confirmBuy() {
         color: '#ffffff',
     }).then((result) => {
         if (result.isConfirmed) {
-            checkMemoryAgain = JSON.parse(localStorage.getItem("products"));
+            let checkMemoryAgain = JSON.parse(localStorage.getItem("products"));
             //Chequea si hay elementos en el carrito primero antes de confirmar la compra. Si no hubiere, emite una alerta.
-            if(!checkMemoryAgain) {
+            if(!checkMemoryAgain || checkMemoryAgain.length === 0) {
                 Swal.fire({
                     icon: "error",
                     title: "No hay nada en el carrito!",
