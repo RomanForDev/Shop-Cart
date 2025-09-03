@@ -48,11 +48,11 @@ header nav .navbar #items-cart {
 }
 header nav .navbar #img-cart {
   height: auto;
-  max-width: 100%;
+  max-width: auto;
 }
 header nav .navbar #home-img {
   height: auto;
-  max-width: 100%;
+  max-width: 50px;
 }
 main {
   padding-left: 3vw;
