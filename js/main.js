@@ -1,5 +1,5 @@
 
-//Funcion para crear las cards en la interfaz de usuario tomando los elementos de cada objeto en "shoes".
+//Funcion para crear las cards en la interfaz de usuario tomando los elementos de cada objeto en "shoes.json".
 
 const callData= async()=> {
     let call = await fetch('./data/shoes.json');
