@@ -36,7 +36,7 @@ callData();
 //     });
 // }
 
-//Notificacione de product oañadido al carrito;
+//Notificacione de producto añadido al carrito;
 
 function notificationAdded(){
     Swal.fire({

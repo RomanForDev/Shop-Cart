@@ -91,7 +91,7 @@ function updateTotal() {
     viewTotal();
 }
 
-// Función para reinicio del carrito;
+// Función para reinicio del carrito dinámicamente desde localStorage con sus chequeos para la muestra en la página;
 
 const reset = document.getElementById('reset-cart');
 reset.addEventListener('click', () => {
@@ -178,6 +178,9 @@ function confirmBuy() {
             },
             willClose: () => {
                 clearInterval(timerInterval);
+                localStorage.removeItem("products");
+                updateCartView();
+                updateTotal();
             }
             }).then((result) => {
             if (result.dismiss === Swal.DismissReason.timer) {
