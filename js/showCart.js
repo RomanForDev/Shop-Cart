@@ -173,7 +173,7 @@ function confirmBuy() {
                 Swal.showLoading();
                 const timer = Swal.getPopup().querySelector("b");
                 timerInterval = setInterval(() => {
-                timer.textContent = `${Swal.getTimerLeft()}`;
+                timer.textContent = `${(Swal.getTimerLeft() / 1000).toFixed(2)}`; // Para que lo muestre en segundos.
                 }, 100);
             },
             willClose: () => {
